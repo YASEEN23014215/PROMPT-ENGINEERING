@@ -83,12 +83,37 @@ Generative Artificial Intelligence (Generative AI) refers to a class of AI syste
 
 ### Types of Generative Models
 
-* **GANs (Generative Adversarial Networks)** – image generation
-* **VAEs (Variational Autoencoders)** – latent-space generation
-* **Autoregressive models** – text and sequence generation
-* **Diffusion models** – high-quality image synthesis
-* **Transformers** – text, code, multimodal generation
+* **GANs (Generative Adversarial Networks)**
+* Generative Adversarial Networks (GANs) are a machine learning framework designed by Ian Goodfellow in 2014, where two neural networks—a generator and a discriminator—compete against each other in a zero-sum game. The generator creates synthetic data (e.g., images, audio) meant to mimic real data, while the discriminator evaluates its authenticity, driving the generator to produce increasingly realistic, high-quality outputs. 
+Key Aspects of GANs:
+Architecture: Consists of two, typically deep, neural networks.
+Generator: Learns to create new data instances that resemble the training data.
+Discriminator: Evaluates data for authenticity, determining if it is "real" (from the dataset) or "fake" (generated).
+Training Process: The networks are trained together in an adversarial, unsupervised learning process. The generator tries to maximize the probability of the discriminator making a mistake, while the discriminator tries to minimize it.
 
+* **VAEs (Variational Autoencoders)**
+ * Variational Autoencoders (VAEs) are generative models that learn a smooth, probabilistic latent space, allowing them not only to compress and reconstruct data but also to generate entirely new, realistic samples. VAEs capture the underlying structure of a dataset and produce outputs that closely resemble the original data.
+
+Learns a continuous latent representation
+Enables controlled and meaningful data generation
+Widely used in image synthesis, anomaly detection, and representation learning
+* **Autoregressive models**
+  * Autoregressive (AR) models are the foundational technology behind modern Large Language Models (LLMs) like GPT, which operate by predicting the next token (word, character, or pixel) in a sequence based on all preceding tokens. In prompt engineering, understanding this "next-token prediction" paradigm is critical because the prompt acts as the initial, seed sequence that directs the model’s probabilistic path for all subsequent generation. Here is a detailed breakdown of autoregressive models within the context of prompt engineering: 1. The Core Principle: "Next-Token Prediction" Sequential Generation: AR models generate data one step at a time, where each output depends on the previous outputs.Conditional Probability: The model estimates the probability of the next token \(t_{n}\) based on the prompt sequence \((t_{1},\dots ,t_{n-1})\). The prompt sets the context for this conditional probability, effectively guiding the model toward a specific answer.Hidden State Dependence: As the model generates, the prompt is updated with each new token, creating a feedback loop where the model's own output influences the next step. 
+* **Diffusion models**
+*  Diffusion model prompt engineering is the art and science of crafting, refining, and structuring text inputs to guide generative AI models (like Stable Diffusion, DALL-E 3, and Midjourney) to produce specific, high-quality images. Since diffusion models turn random noise into images based on text guidance, effective prompting acts as a steering mechanism for this process. 
+It involves choosing the right keywords, descriptive language, and structural syntax to transform a basic idea into a detailed, visually appealing output. 
+Core Components of a Diffusion Prompt
+A well-structured prompt typically includes several key elements to guide the model: 
+Subject: The main focus of the image (e.g., "a corgi dog").
+Style/Medium: The artistic style or type of image (e.g., "oil painting," "photorealistic," "3D render," "anime style").
+Composition & Lighting: Details about the scene's layout and atmosphere (e.g., "cinematic lighting," "close-up," "dramatic shadows," "wide angle").
+Details & Quality Modifiers: Keywords to boost fidelity (e.g., "highly detailed," "8k resolution," "intricate details"). 
+* **Transformers**
+*  The Transformer model changed Artificial Intelligence. It moved away from processing text sequentially to processing entire data sequences in parallel. This allows for faster training and better comprehension of long-range context. 
+Key components in a Transformer include:
+Self-Attention Mechanism: This enables the model to weigh the importance of different words in a prompt, regardless of their distance from each other. It understands that in the sentence "The animal didn't cross the street because it was too tired," the word "it" refers to the animal, not the street.
+Encoder-Decoder Structure: The encoder analyzes the input prompt (tokenization, understanding context), while the decoder generates the output response.
+Positional Encoding: Because the model processes data in parallel, it needs a way to understand the order of words. Positional encoding adds this structural information. 
 ---
 
 ## 2. Generative AI Architectures (Focus on Transformers)
